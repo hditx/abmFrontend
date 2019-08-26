@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>Datos Generales</h1><hr>
+  <form (ngSubmit)="guardar(f)" #f="ngForm">
+     <div class="form-row">
+        <div class="form-group col-md-4">
+           <label>Nombre</label>
+           <input type="text" name="nombre" [(ngModel)]="persona.nombre" class="form-control" placeholder="Nombre">
+        </div>
+     <div class="form-group col-md-4">
+        <label>Apellido</label>
+        <input type="text" name="apellido" [(ngModel)]="persona.apellido" placeholder="Apellido" class="form-control">
+     </div>
+     <div class="form-group col-md-4">
+        <label>Numero Documento</label>
+        <input type="text" name="numerodocumento" [(ngModel)]="persona.numerodocumento" placeholder="Numero de documento" class="form-control">
+     </div>
+     </div>
+      <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Tipo de documento</label>
+        <select class="form-control" name="tipodocumento" [(ngModel)]="persona.tipodocumento">
+          <option value="dni">DNI</option>
+          <option value="cedula">Cedula</option>
+          <option value="pasaporte">Pasaporte</option>
+        </select>
+     </div>
+      <div class="form-group col-md-4">
+        <label>Fecha de nacimiento</label>
+        <input type="date" name="fechanacimiento" [(ngModel)]="persona.fechanacimiento" class="form-control">
+      </div>
+    </div>
+    <div class="form-row">
+      <a routerLink="/buscar" class="btn btn-primary col-md-3">Volver</a>
+      <input type="submit" name="guardar" value="Guardar" class="btn btn-success col-md-3">
+    </div>
+  </form>
+</div>

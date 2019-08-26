@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Personas</h1>
+  <div class="bg-light">
+    <div class="row">
+      <h2 class="col-md-11">Filtros</h2>
+      <button class="btn btn-primary" routerLink="/formulario">
+        Nuevo
+      </button>
+    </div>
+    <hr>
+   <form>
+     <div class="form-row">
+      <div class="form-group col-md-6">
+         <label>Nombre</label>
+         <input type="text" name="nombre" [(ngModel)]="nombre" placeholder="Nombre..." class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+         <label>Tipo Documento</label>
+         <select class="form-control" name="tipodocumento" [(ngModel)]="tipodocumento">
+           <option value="todas">Todas</option>
+           <option value="dni">DNI</option>
+           <option value="cedula">Cedula</option>
+           <option value="pasaporte">Pasaporte</option>
+         </select>
+      </div>
+     </div>
+     <input type="submit" routerLink="/lista/{{nombre}}/{{tipodocumento}}" name="buscar" value="Buscar" class="btn btn-success">
+  </form>
+  </div>
+</div>
